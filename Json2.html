@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        // Object
+        var obj={
+            "name":"nataraj",
+            "age":"21"
+        }
+        document.write(`${typeof(obj)} <br>`)
+        document.write(`${obj} <br><br>`)
+       
+
+        //Convert object into Json String
+        var json_string=JSON.stringify(obj)
+        document.write(` ${typeof(json_string)} <br>`)
+        document.write(`${json_string} <br><br>`)
+
+        //Convert string into Json Object
+        var json_object=JSON.parse(json_string)
+        document.write(` ${typeof(json_object)} <br>`)
+        document.write(`${json_object} <br>`)
+
+
+
+        //When receiving data from a server it always string,so Parse it
+        // var obj='{ "name":"John", "age":30, "city":"New York"}'
+        // document.write(typeof(ob))
+        // document.write(ob)
+        // document.write(JSON.parse(ob))
+
+        // when sending a data to a server it must be string
+        
+        
+
+
+
+    </script>
+
+</body>
+</html>

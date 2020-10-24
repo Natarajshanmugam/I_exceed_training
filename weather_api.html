@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function weather() {
+        const key="80198d6fe960d4da7ee4278f9e0f792d";
+        const city_name=document.getElementById("location").value
+        console.log(`${city_name}`)
+        fetch('http://api.openweathermap.org/data/2.5/weather?q=' + city_name+ '&appid=' + key) 
+        .then(function(resp) { return resp.json() }) // Convert data to json
+        .then(function(data) {
+            console.log(data);
+            var json_string="<pre>"+JSON.stringify(data,null,5) +"</pre>"
+            document.getElementById("json").innerHTML=json_string;
+        })
+        }
+    </script>
+    <input type="text" id="location" placeholder="Enter Location">
+    <input type="button" value="Submit" onclick="weather()">
+    <p id="json"></p>
+</body>
+</html>
